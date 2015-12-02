@@ -7,8 +7,8 @@
     <ProjectGuid>{E72E2C0E-EB74-4B88-A295-1ED0C74D2D49}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GudgelBudget</RootNamespace>
-    <AssemblyName>GudgelBudget</AssemblyName>
+    <RootNamespace>BudgetAid</RootNamespace>
+    <AssemblyName>BudgetAid</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <PublishUrl>publish\</PublishUrl>
@@ -82,6 +82,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
