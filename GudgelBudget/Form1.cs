@@ -353,7 +353,7 @@ namespace GudgelBudget
         }
         #endregion
 
-        #region button events
+        #region Button Events
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             
@@ -432,14 +432,22 @@ namespace GudgelBudget
             }
             else
             {
-                estimate = Convert.ToDouble(TargetTextBox.Text);
-                timeSpanFin = ew.calcDateRange(dateInit, dateFin);
-                timeSpanRemain = ew.calcDateRange(currentDate, dateFin);
-                toSpend = ew.calculateProg(categoryA, dateInit, dateFin, estimate);
+                try
+                {
+                    estimate = Convert.ToDouble(TargetTextBox.Text);
+                    timeSpanFin = ew.calcDateRange(dateInit, dateFin);
+                    timeSpanRemain = ew.calcDateRange(currentDate, dateFin);
+                    toSpend = ew.calculateProg(categoryA, dateInit, dateFin, estimate);
 
-                MessageBox.Show("$" + Math.Round(toSpend, 2).ToString() + " left to spend over\n"
-                    + timeSpanRemain.ToString() + " days in your\n"
-                    + categoryA + " budget.");
+                    MessageBox.Show("$" + Math.Round(toSpend, 2).ToString() + " left to spend over\n"
+                        + timeSpanRemain.ToString() + " days in your\n"
+                        + categoryA + " budget.");
+                }
+                catch (System.Runtime.InteropServices.COMException)
+                {
+                    MessageBox.Show("A fatal error. occured. Please reopen this app and try again.");
+                    Application.Exit();
+                }
             }
         }
         #endregion
@@ -462,7 +470,7 @@ namespace GudgelBudget
             ew.Close();
         }
 
-        #region helper methods
+        #region Helper Methods
         bool formatCheck(string dateInit, string dateFin, string estimate)
         {
             bool convertE = false, lengthE = false;
