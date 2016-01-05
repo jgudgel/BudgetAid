@@ -31,7 +31,7 @@ namespace GudgelBudget
         bool formatE_I;
         bool dateE;
 
-        string currentDate = DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() +
+        string currentDate = DateTime.Now.ToString("yyyy") + DateTime.Now.ToString("MM") +
                         DateTime.Now.ToString("dd");
         bool emptyE_A = false, formatE_A = false;
         string dateInit = "";

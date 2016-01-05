@@ -279,9 +279,9 @@ namespace GudgelBudget
          */
         public int calcDateRange(string fromDate, string toDate)
         {
+            Debug.WriteLine("Dates: " + fromDate + ", " + toDate);
             int fromDateInt = Int32.Parse(fromDate);
             int toDateInt = Int32.Parse(toDate);
-            Debug.WriteLine(toDate);
 
             DateTime oldDate = new DateTime(fromDateInt / 10000,
                                             (fromDateInt / 100) % 100,
